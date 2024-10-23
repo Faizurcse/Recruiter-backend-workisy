@@ -58,6 +58,8 @@ class TokenService {
       });
     };
   }
+
+  
   public async verifyRefreshToken(token: string): Promise<TokenPayload> {
     return new Promise(async (resolve, reject) => {
       try {
