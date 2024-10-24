@@ -1,9 +1,9 @@
 import { Router } from 'express';
-import AuthController from './auth.controller';
 import { Routes } from '../../interface/shared/routes.interface';
 import { ApiV1 } from '../../utils/variable';
-
 import TokenService from '../../services/token.service';
+import AuthController from './auth.controller';
+
 
 class AuthRoute implements Routes {
   public path = '/auth';

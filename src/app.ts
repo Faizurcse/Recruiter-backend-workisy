@@ -13,7 +13,7 @@ import { dbConnection } from './databases';
 import { HttpError } from 'http-errors';
 import path from 'path';
 import ExpressMongoSanitize from 'express-mongo-sanitize';
-import { logError, ErrorResponse, DataResponse } from './utils/common';
+import { logError, ErrorResponse, DataResponse, consoleLog } from './utils/common';
 import { logger } from './utils/logger';
 const swaggerDocument = require('../swagger.json');
 class App {
@@ -29,6 +29,7 @@ class App {
     this.app = express();
     this.env = NODE_ENV || 'development';
     this.port = PORT || 8000;
+
     this.log_format = LOG_FORMAT || 'dev';
     this.setStaticFolder();
     this.initializeMiddlewares();
@@ -110,6 +111,7 @@ class App {
       return DataResponse(req, res, 200, 'Server Is Running');
     });
     routes.forEach(route => {
+      
       this.app.use('/', route.router);
     });
   }

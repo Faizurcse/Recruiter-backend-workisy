@@ -5,11 +5,9 @@ const profileSchema: Schema = new Schema(
   {
     firstName: { type: String, required: true, trim: true },
     lastName: { type: String, required: true, trim: true },
-    emailAddress: { type: String, required: true, trim: true },
+    email: { type: String, required: true, trim: true },
     mobileNumber: { type: String, required: true, trim: true },
-    country: { type: String, required: true, trim: true },
-    state: { type: String, required: true, trim: true },
-    district: { type: String, required: true, trim: true },
+    currentLoaction: { type: String, required: true, trim: true },
     description: { type: String, required: true, trim: true },
     from: { type: Date, required: true },
     currentCompanyName: { type: String, required: true, trim: true },

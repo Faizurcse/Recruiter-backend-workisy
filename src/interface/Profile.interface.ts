@@ -3,11 +3,9 @@ import { timeStamp } from './shared/timestamp.interface';
 export interface Profile extends timeStamp{
 firstName: string;
   lastName: string;
-  emailAddress: string;
+  email: string;
   mobileNumber: string;
-  country: string;
-  state: string;
-  district: string;
+  currentLoaction: string;
   description: string;
   from: Date;
   currentCompanyName: string;
