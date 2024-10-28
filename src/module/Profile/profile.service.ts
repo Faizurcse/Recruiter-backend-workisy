@@ -11,18 +11,17 @@ class ProfileService {
   public async EmployerProfile(body: Profile): Promise<any> {
     return new Promise(async (resolve, reject) => {
       try {
-        console.log("Body received in service:", body);  // Debugging
         if (Object.keys(body).length === 0) throw new createHttpError.NotAcceptable(ApiMessage.emptybody);
         const { email } = body;
         const userExist = await AdminSchema.findOne({ email: email }).select('-__v');
-        console.log("")
         if (!userExist) throw new createHttpError.NotAcceptable(ApiMessage.usernotfound);
+        // const profileExist = await ProfileSchema.findOne({ email: email }).select('-__v');
+        // if (profileExist) throw new createHttpError.NotAcceptable(ApiMessage.userEmailalreadyexist);
         await ProfileSchema.validate(body);
         const result = await ProfileSchema.create(body);
         const data = { data: result };
         resolve(data);
       } catch (error) {
-        console.error("Error in service:", error);  // Debugging
         reject(error);
       }
     });

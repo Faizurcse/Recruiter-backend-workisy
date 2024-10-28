@@ -46,6 +46,7 @@ class TokenService {
     return (req: RequestWithPayload, res: Response, next: NextFunction) => {
       if (!req.headers['authorization']) return ErrorResponse(res, 401, 'Unauthorized');
       const authHeader = req.headers['authorization'];
+      console.log("authHeader===",authHeader)
       const bearerToken = authHeader.split(' ');
       const token = bearerToken[1];
       JWT.verify(token, this.secret, (err: any, payload: TokenPayload) => {

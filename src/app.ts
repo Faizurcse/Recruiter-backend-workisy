@@ -8,7 +8,7 @@ import { Routes } from './interface/shared/routes.interface';
 import compression from 'compression';
 import swaggerUi from 'swagger-ui-express';
 import 'reflect-metadata';
-import mongoose, { connect, set } from 'mongoose';
+import { connect} from 'mongoose';
 import { dbConnection } from './databases';
 import { HttpError } from 'http-errors';
 import path from 'path';
@@ -111,7 +111,6 @@ class App {
       return DataResponse(req, res, 200, 'Server Is Running');
     });
     routes.forEach(route => {
-      
       this.app.use('/', route.router);
     });
   }

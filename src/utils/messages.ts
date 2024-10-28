@@ -12,4 +12,5 @@ export const ApiMessage = {
   checknumber: 'Please Check The Number',
   blockeduser: 'This User Is Blocked By Admin',
   notexist: 'Not Exist',
+  userEmailalreadyexist:'User Email Already Exist'
 };

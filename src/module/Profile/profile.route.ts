@@ -18,7 +18,7 @@ class ProfileRoute implements Routes {
   private initializeRoutes() {
     this.router.post(
       `${ApiV1}${this.employer}${this.path}/employerprofile`,
-      this.tokenservices.verifyAccessToken,
+      this.tokenservices.verifyAccessToken(),
       this.employerProfileController.employerProfile,
     );
   }
