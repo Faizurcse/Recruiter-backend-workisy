@@ -37,6 +37,7 @@ class SuperAuthService {
         const hashedPassword = hashSync(password, salt);
         body['password'] = hashedPassword;
         await SuperAdminSchema.validate(body);
+        
         const result = await SuperAdminSchema.create(body);
         const accessToken: string = await this.tokenService.signAccessToken(result._id);
         const refreshToken: string = await this.tokenService.signRefreshToken(result._id);
