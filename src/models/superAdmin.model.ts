@@ -14,3 +14,5 @@ const SuperadminSchema: Schema = new Schema(
 const SuperAdminSchema = model<SuperAdmin & Document>('Superadmin', SuperadminSchema);
 
 export default SuperAdminSchema;
+
+

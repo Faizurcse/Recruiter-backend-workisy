@@ -8,11 +8,11 @@ const jobPostSchema: Schema = new Schema(
       required: true,
       trim: true,
     },
-    companyName:{
-      type:String,
-      required:true,
-      trim:true
-    },
+    // companyName:{
+    //   type:String,
+    //   required:true,
+    //   trim:true
+    // },
     jobDescription: {
       type: String,
       required: true,
@@ -203,6 +203,10 @@ const jobPostSchema: Schema = new Schema(
       type: Boolean,
       required: true,
     },
+    user: {
+      type: Schema.Types.ObjectId,
+      ref: "admin"
+    }
   },
   { timestamps: true },
 );
